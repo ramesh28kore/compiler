@@ -1,0 +1,23 @@
+:root {
+  --paper: #fcfbf8;
+  --paper-deep: #f1ede4;
+  --paper-line: rgba(45, 92, 145, 0.08);
+  --ink: #184f88;
+  --ink-soft: #4777a6;
+  --ink-faint: rgba(24, 79, 136, 0.14);
+  --graphite: #34312c;
+  --sans: 'Kalam', cursive;
+  --display: 'Kalam', cursive;
+  --mono: 'Courier New', monospace;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, code { font: inherit; }
+code { padding: 0 0.18em; border-bottom: 1px dashed var(--ink-soft); }
