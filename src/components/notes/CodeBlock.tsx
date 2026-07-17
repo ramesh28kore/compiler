@@ -1,15 +1,30 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { vs } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 type CodeBlockProps = { code: string; language?: string }
+
+const codeFontFamily = '"Cascadia Code", "Consolas", "Fira Code", "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace'
 
 export function CodeBlock({ code, language = 'c' }: CodeBlockProps) {
   return (
     <SyntaxHighlighter
       language={language}
-      style={vs}
+      style={oneLight}
       className="code-block"
-      customStyle={{ margin: '18px 0', borderRadius: '6px', fontSize: '15px', background: '#ffffff', border: '1px solid #d0d0d0' }}
+      showLineNumbers
+      wrapLongLines
+      lineNumberStyle={{ minWidth: '2.5em', paddingRight: '1em', color: '#a0a0a8', userSelect: 'none' }}
+      customStyle={{
+        margin: '18px 0',
+        borderRadius: '8px',
+        border: '1px solid #d7dae0',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+        background: '#fafafa',
+        fontSize: '15.5px',
+        lineHeight: '1.6',
+        padding: '18px 20px',
+      }}
+      codeTagProps={{ style: { fontFamily: codeFontFamily } }}
     >
       {code}
     </SyntaxHighlighter>

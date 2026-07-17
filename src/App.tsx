@@ -1,5 +1,5 @@
 import './App.css'
-import { ArrowItem, CodeBlock, CompilerPhasesDiagram, DataTable, FlowDiagram, NoteBox, NotePage, NoteTitleBox, SectionHeading } from './components/notes'
+import { ArrowItem, CodeBlock, CompilerPhasesDiagram, DataTable, FlowDiagram, NoteBox, NotePage, NoteTitleBox, OutputBlock, SectionHeading } from './components/notes'
 
 function App() {
   return (
@@ -554,8 +554,7 @@ int main()
     return 0;
 }`} />
           <p className="note-copy">Output:</p>
-          <pre className="ascii-diagram">{`20
-10`}</pre>
+          <OutputBlock output={`20\n10`} />
         </NotePage>
 
         <NotePage pageNumber="28" label="Call by Reference">
@@ -577,7 +576,7 @@ int main()
     return 0;
 }`} />
           <p className="note-copy">Output:</p>
-          <pre className="ascii-diagram">{`20`}</pre>
+          <OutputBlock output={`20`} />
         </NotePage>
 
         <NotePage pageNumber="29" label="Call by Name">
@@ -1425,7 +1424,7 @@ void main()
     getch();
 }`} />
           <SectionHeading number="1">Sample Output</SectionHeading>
-          <pre className="ascii-diagram">{`Enter Expression (End with $): a=b+c*d$
+          <OutputBlock output={`Enter Expression (End with $): a=b+c*d$
 
 Expression : a=b+c*d
 
@@ -1440,7 +1439,7 @@ d       1006            Identifier
 
 Enter Identifier to Search : c
 Symbol Found
-c at Address 1004`}</pre>
+c at Address 1004`} />
           <NoteBox title="Note">
             <code>conio.h</code>, <code>clrscr()</code>, and <code>getch()</code> are Turbo C / Turbo C++ specific
             and require a DOS-based compiler (e.g. Turbo C++ 3.0 or its emulator). Addresses are runtime memory
