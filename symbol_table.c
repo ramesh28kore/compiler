@@ -6,7 +6,7 @@
 void main()
 {
     int i=0,j=0,x=0,n,flag=0;
-    char ch,expr[20],id[20],search,next;
+    char expr[50],id[20],ch,next,search;
     void *addr[20],*p;
 
     clrscr();
@@ -28,7 +28,7 @@ void main()
 
     printf("\n\nSYMBOL TABLE");
     printf("\n-----------------------------------------");
-    printf("\nIdentifier\tAddress\t\tType");
+    printf("\nSymbol\tAddress\t\tType");
     printf("\n-----------------------------------------");
 
     j=0;
@@ -45,7 +45,7 @@ void main()
                 addr[x]=p;
                 id[x]=ch;
 
-                printf("\n%c\t\t\t%u\t\tIdentifier",id[x],addr[x]);
+                printf("\n%c\t%u\tIdentifier",ch,(unsigned)addr[x]);
                 x++;
             }
             else
@@ -59,7 +59,7 @@ void main()
                     addr[x]=p;
                     id[x]=ch;
 
-                    printf("\n%c\t\t\t%u\t\tIdentifier",id[x],addr[x]);
+                    printf("\n%c\t%u\tIdentifier",ch,(unsigned)addr[x]);
                     x++;
                 }
             }
@@ -75,7 +75,7 @@ void main()
         if(search==id[i])
         {
             printf("\nSymbol Found");
-            printf("\n%c at Address %u",id[i],addr[i]);
+            printf("\n%c at Address %u",search,(unsigned)addr[i]);
             flag=1;
             break;
         }

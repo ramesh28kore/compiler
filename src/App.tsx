@@ -1353,6 +1353,127 @@ start --> (7) -b-> ((8))
             <ArrowItem>Compiler Construction — Louden, Thomson.</ArrowItem>
           </div>
         </NotePage>
+
+        <NotePage pageNumber="69" label="Symbol Table Program">
+          <NoteTitleBox>Experiment 1: Implementation of Symbol Table</NoteTitleBox>
+          <p className="note-copy">
+            A C program that reads an expression terminated by <code>$</code>, scans it for identifiers (alphabetic
+            characters followed by <code>=</code>, <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>,{' '}
+            <code>%</code>, or occurring at the end of the expression), and builds a symbol table storing each
+            identifier's name, memory address, and type. It then allows searching for a given identifier in the
+            table.
+          </p>
+          <pre className="ascii-diagram">{`#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+void main()
+{
+    int i=0,j=0,x=0,n,flag=0;
+    char expr[50],id[20],ch,next,search;
+    void *addr[20],*p;
+
+    clrscr();
+
+    printf("Enter Expression (End with $): ");
+
+    while((ch=getchar())!='$')
+    {
+        expr[i]=ch;
+        i++;
+    }
+
+    n=i-1;
+
+    printf("\\nExpression : ");
+
+    for(i=0;i<=n;i++)
+        printf("%c",expr[i]);
+
+    printf("\\n\\nSYMBOL TABLE");
+    printf("\\n-----------------------------------------");
+    printf("\\nSymbol\\tAddress\\t\\tType");
+    printf("\\n-----------------------------------------");
+
+    j=0;
+
+    while(j<=n)
+    {
+        ch=expr[j];
+
+        if(isalpha(ch))
+        {
+            if(j==n)
+            {
+                p=malloc(sizeof(char));
+                addr[x]=p;
+                id[x]=ch;
+
+                printf("\\n%c\\t%u\\tIdentifier",ch,(unsigned)addr[x]);
+                x++;
+            }
+            else
+            {
+                next=expr[j+1];
+
+                if(next=='='||next=='+'||next=='-'||
+                   next=='*'||next=='/'||next=='%')
+                {
+                    p=malloc(sizeof(char));
+                    addr[x]=p;
+                    id[x]=ch;
+
+                    printf("\\n%c\\t%u\\tIdentifier",ch,(unsigned)addr[x]);
+                    x++;
+                }
+            }
+        }
+        j++;
+    }
+
+    printf("\\n\\nEnter Identifier to Search : ");
+    search=getch();
+
+    for(i=0;i<x;i++)
+    {
+        if(search==id[i])
+        {
+            printf("\\nSymbol Found");
+            printf("\\n%c at Address %u",search,(unsigned)addr[i]);
+            flag=1;
+            break;
+        }
+    }
+
+    if(flag==0)
+        printf("\\nSymbol Not Found");
+
+    getch();
+}`}</pre>
+          <SectionHeading number="1">Sample Output</SectionHeading>
+          <pre className="ascii-diagram">{`Enter Expression (End with $): a=b+c*d$
+
+Expression : a=b+c*d
+
+SYMBOL TABLE
+-----------------------------------------
+Symbol  Address         Type
+-----------------------------------------
+a       1000            Identifier
+b       1002            Identifier
+c       1004            Identifier
+d       1006            Identifier
+
+Enter Identifier to Search : c
+Symbol Found
+c at Address 1004`}</pre>
+          <NoteBox title="Note">
+            <code>conio.h</code>, <code>clrscr()</code>, and <code>getch()</code> are Turbo C / Turbo C++ specific
+            and require a DOS-based compiler (e.g. Turbo C++ 3.0 or its emulator). Addresses are runtime memory
+            locations returned by <code>malloc()</code>, so they will vary between systems and runs.
+          </NoteBox>
+        </NotePage>
       </div>
 
       <footer className="app-footer">UNIT 1 · LANGUAGE PROCESSING SYSTEMS</footer>
