@@ -1,4 +1,5 @@
 export { ArrowItem } from './ArrowItem'
+export { CodeBlock } from './CodeBlock'
 export { CompilerPhasesDiagram } from './CompilerPhasesDiagram'
 export { DataTable } from './DataTable'
 export { FlowDiagram } from './FlowDiagram'

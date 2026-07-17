@@ -1,5 +1,5 @@
 import './App.css'
-import { ArrowItem, CompilerPhasesDiagram, DataTable, FlowDiagram, NoteBox, NotePage, NoteTitleBox, SectionHeading } from './components/notes'
+import { ArrowItem, CodeBlock, CompilerPhasesDiagram, DataTable, FlowDiagram, NoteBox, NotePage, NoteTitleBox, SectionHeading } from './components/notes'
 
 function App() {
   return (
@@ -395,19 +395,19 @@ MOVF R1, id1`}</pre>
             compiler make about a program". If a language uses a policy that allows the compiler to decide an issue,
             the language uses a <strong>static policy</strong> — the issue can be decided at compile time.
           </p>
-          <pre className="ascii-diagram">{`static void main()
+          <CodeBlock language="c" code={`static void main()
 {
     int num1, num2;
-    int sum = num1 + num2   <- no semicolon: error
-}                              occurs at compile time`}</pre>
+    int sum = num1 + num2   // no semicolon: error (caught at compile time)
+}`} />
           <p className="note-copy">
             If the decision is made at run time, the language uses a <strong>dynamic policy</strong>.
           </p>
-          <pre className="ascii-diagram">{`public void main()
+          <CodeBlock language="c" code={`void main()
 {
     int a = 0;
-    int num = 10/a;   <- error at run time
-}`}</pre>
+    int num = 10 / a;   // division by zero: error at run time
+}`} />
         </NotePage>
 
         <NotePage pageNumber="20" label="Environment &amp; States">
@@ -447,7 +447,7 @@ MOVF R1, id1`}</pre>
             Consider the program below, which has 4 blocks with several definitions of a and b. Each declaration
             initializes its variable to the number of the block to which it belongs.
           </p>
-          <pre className="ascii-diagram">{`main
+          <CodeBlock language="c" code={`main()
 {                          // B1
     int a = 1;
     int b = 1;
@@ -455,16 +455,16 @@ MOVF R1, id1`}</pre>
         int b = 2;
         {                  // B3
             int a = 3;
-            cout << a << b;
+            printf("%d %d", a, b);
         }
         {                  // B4
             int b = 4;
-            cout << a << b;
+            printf("%d %d", a, b);
         }
-        cout << a << b;
+        printf("%d %d", a, b);
     }
-    cout << a << b;
-}`}</pre>
+    printf("%d %d", a, b);
+}`} />
         </NotePage>
 
         <NotePage pageNumber="23" label="Declaration Scopes">
@@ -539,24 +539,23 @@ i = 1   =>  Definition`}</pre>
           <p className="note-copy">
             The value of the actual parameter, in "read only mode", is transmitted to the formal parameters.
           </p>
-          <pre className="ascii-diagram">{`#include <iostream>
-using namespace std;
+          <CodeBlock language="c" code={`#include <stdio.h>
 
-void show(int x)      // formal parameter
+void show(int x)      /* formal parameter */
 {
-    cout << x << endl;
+    printf("%d\\n", x);
 }
 
 int main()
 {
     int age = 20;
-    show(age);        // default parameter
-    show(10);         // actual parameter
+    show(age);        /* actual parameter */
+    show(10);         /* actual parameter */
     return 0;
-}
-
-O/P:  20
-      10`}</pre>
+}`} />
+          <p className="note-copy">Output:</p>
+          <pre className="ascii-diagram">{`20
+10`}</pre>
         </NotePage>
 
         <NotePage pageNumber="28" label="Call by Reference">
@@ -564,12 +563,11 @@ O/P:  20
           <p className="note-copy">
             The reference / address of the actual parameter is transmitted to the formal parameters.
           </p>
-          <pre className="ascii-diagram">{`#include <iostream>
-using namespace std;
+          <CodeBlock language="c" code={`#include <stdio.h>
 
 void show(int *x)
 {
-    cout << *x << endl;
+    printf("%d\\n", *x);
 }
 
 int main()
@@ -577,9 +575,9 @@ int main()
     int age = 20;
     show(&age);
     return 0;
-}
-
-O/P:  20`}</pre>
+}`} />
+          <p className="note-copy">Output:</p>
+          <pre className="ascii-diagram">{`20`}</pre>
         </NotePage>
 
         <NotePage pageNumber="29" label="Call by Name">
@@ -1338,7 +1336,7 @@ start --> (7) -b-> ((8))
             identifier's name, memory address, and type. It then allows searching for a given identifier in the
             table.
           </p>
-          <pre className="ascii-diagram">{`#include <stdio.h>
+          <CodeBlock language="c" code={`#include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -1425,7 +1423,7 @@ void main()
         printf("\\nSymbol Not Found");
 
     getch();
-}`}</pre>
+}`} />
           <SectionHeading number="1">Sample Output</SectionHeading>
           <pre className="ascii-diagram">{`Enter Expression (End with $): a=b+c*d$
 
