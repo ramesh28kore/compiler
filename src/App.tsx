@@ -1295,6 +1295,64 @@ start --> (7) -b-> ((8))
             <ArrowItem>Convert to a DFA.</ArrowItem>
           </div>
         </NotePage>
+
+        <NotePage pageNumber="67" label="Lab Syllabus">
+          <NoteTitleBox>CS704PC: Compiler Design Lab — R22 Syllabus</NoteTitleBox>
+          <p className="note-copy">
+            JNTU Hyderabad · B.Tech. IV Year I Sem. &nbsp;|&nbsp; L-T-P-C: 0-0-2-1
+          </p>
+          <SectionHeading number="1">Prerequisites &amp; Co-requisites</SectionHeading>
+          <div className="arrow-list">
+            <ArrowItem>Prerequisite: A course on "Object Oriented Programming through Java".</ArrowItem>
+            <ArrowItem>Co-requisite: A course on "Web Technologies".</ArrowItem>
+          </div>
+          <SectionHeading number="2">Course Objectives</SectionHeading>
+          <div className="arrow-list">
+            <ArrowItem>To understand the various phases in the design of a compiler.</ArrowItem>
+            <ArrowItem>To understand the design of top-down and bottom-up parsers.</ArrowItem>
+            <ArrowItem>To understand syntax directed translation schemes.</ArrowItem>
+            <ArrowItem>To introduce lex and yacc tools.</ArrowItem>
+          </div>
+          <SectionHeading number="3">Course Outcomes</SectionHeading>
+          <div className="arrow-list">
+            <ArrowItem>Design, develop, and implement a compiler for any language.</ArrowItem>
+            <ArrowItem>Use lex and yacc tools for developing a scanner and a parser.</ArrowItem>
+            <ArrowItem>Design and implement LL and LR parsers.</ArrowItem>
+          </div>
+        </NotePage>
+
+        <NotePage pageNumber="68" label="Lab Syllabus">
+          <NoteTitleBox>List of Experiments</NoteTitleBox>
+          <div className="arrow-list">
+            <ArrowItem>1. Implementation of symbol table.</ArrowItem>
+            <ArrowItem>2. Develop a lexical analyzer to recognize a few patterns in C (ex. Identifiers, constants, comments, operators etc.)</ArrowItem>
+            <ArrowItem>3. Implementation of lexical analyzer using lex tool.</ArrowItem>
+            <ArrowItem>4. Generate yacc specification for a few syntactic categories:
+              <br /> a) Program to recognize a valid arithmetic expression that uses operators +, -, * and /.
+              <br /> b) Program to recognize a valid variable which starts with a letter followed by any number of letters or digits.
+              <br /> c) Implementation of calculator using lex and yacc.
+            </ArrowItem>
+            <ArrowItem>5. Convert the BNF rules into yacc form and write code to generate an abstract syntax tree.</ArrowItem>
+            <ArrowItem>6. Implement type checking.</ArrowItem>
+            <ArrowItem>7. Implement any one storage allocation strategy (heap, stack, static).</ArrowItem>
+            <ArrowItem>8. Write a lex program to count the number of words and number of lines in a given file or program.</ArrowItem>
+            <ArrowItem>9. Write a C program to implement a lexical analyzer using C.</ArrowItem>
+            <ArrowItem>10. Write a recursive descent parser for the grammar: E→E+T, E→T, T→T*F, T→F, F→(E)/id.</ArrowItem>
+            <ArrowItem>11. Write a recursive descent parser for the grammar: S→(L), S→a, L→L,S, L→S.</ArrowItem>
+            <ArrowItem>12. Write a C program to calculate the first function for the grammar: E→E+T, E→T, T→T*F, T→F, F→(E)/id.</ArrowItem>
+            <ArrowItem>13. Write a YACC program to implement a top-down parser for the given grammar.</ArrowItem>
+            <ArrowItem>14. Write a YACC program to evaluate an algebraic expression.</ArrowItem>
+          </div>
+          <SectionHeading number="1">Text Book</SectionHeading>
+          <p className="note-copy">
+            Compilers: Principles, Techniques and Tools, Second Edition — Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman.
+          </p>
+          <SectionHeading number="2">Reference Books</SectionHeading>
+          <div className="arrow-list">
+            <ArrowItem>Lex &amp; Yacc — John R. Levine, Tony Mason, Doug Brown (O'Reilly).</ArrowItem>
+            <ArrowItem>Compiler Construction — Louden, Thomson.</ArrowItem>
+          </div>
+        </NotePage>
       </div>
 
       <footer className="app-footer">UNIT 1 · LANGUAGE PROCESSING SYSTEMS</footer>
