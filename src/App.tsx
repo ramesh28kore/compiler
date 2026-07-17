@@ -1297,31 +1297,6 @@ start --> (7) -b-> ((8))
         </NotePage>
 
         <NotePage pageNumber="67" label="Lab Syllabus">
-          <NoteTitleBox>CS704PC: Compiler Design Lab — R22 Syllabus</NoteTitleBox>
-          <p className="note-copy">
-            JNTU Hyderabad · B.Tech. IV Year I Sem. &nbsp;|&nbsp; L-T-P-C: 0-0-2-1
-          </p>
-          <SectionHeading number="1">Prerequisites &amp; Co-requisites</SectionHeading>
-          <div className="arrow-list">
-            <ArrowItem>Prerequisite: A course on "Object Oriented Programming through Java".</ArrowItem>
-            <ArrowItem>Co-requisite: A course on "Web Technologies".</ArrowItem>
-          </div>
-          <SectionHeading number="2">Course Objectives</SectionHeading>
-          <div className="arrow-list">
-            <ArrowItem>To understand the various phases in the design of a compiler.</ArrowItem>
-            <ArrowItem>To understand the design of top-down and bottom-up parsers.</ArrowItem>
-            <ArrowItem>To understand syntax directed translation schemes.</ArrowItem>
-            <ArrowItem>To introduce lex and yacc tools.</ArrowItem>
-          </div>
-          <SectionHeading number="3">Course Outcomes</SectionHeading>
-          <div className="arrow-list">
-            <ArrowItem>Design, develop, and implement a compiler for any language.</ArrowItem>
-            <ArrowItem>Use lex and yacc tools for developing a scanner and a parser.</ArrowItem>
-            <ArrowItem>Design and implement LL and LR parsers.</ArrowItem>
-          </div>
-        </NotePage>
-
-        <NotePage pageNumber="68" label="Lab Syllabus">
           <NoteTitleBox>List of Experiments</NoteTitleBox>
           <div className="arrow-list">
             <ArrowItem>1. Implementation of symbol table.</ArrowItem>
@@ -1354,7 +1329,7 @@ start --> (7) -b-> ((8))
           </div>
         </NotePage>
 
-        <NotePage pageNumber="69" label="Symbol Table Program">
+        <NotePage pageNumber="68" label="Symbol Table Program">
           <NoteTitleBox>Experiment 1: Implementation of Symbol Table</NoteTitleBox>
           <p className="note-copy">
             A C program that reads an expression terminated by <code>$</code>, scans it for identifiers (alphabetic

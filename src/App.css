@@ -31,7 +31,7 @@
 .note-copy { max-width: 680px; margin: 0 0 22px; font-size: 19px; line-height: 1.45; text-align: justify; text-align-last: left; text-justify: inter-word; hyphens: auto; overflow-wrap: break-word; }
 .note-box { margin-top: 28px; padding: 14px 18px; border: 2px solid var(--ink); border-radius: 4px 8px 3px 6px; font-size: 18px; transform: rotate(0.25deg); }
 .note-box strong { display: block; margin-bottom: 5px; font-size: 20px; }
-.note-box p { margin: 0; line-height: 1.4; text-align: justify; text-align-last: left; text-justify: inter-word; hyphens: auto; overflow-wrap: break-word; }
+.note-box > div { margin: 0; line-height: 1.4; text-align: justify; text-align-last: left; text-justify: inter-word; hyphens: auto; overflow-wrap: break-word; }
 .flow-diagram { display: flex; align-items: center; justify-content: center; gap: 13px; margin: 32px 0 34px; }
 .flow-diagram--vertical { flex-direction: column; gap: 0; }
 .flow-step { display: flex; align-items: center; gap: 13px; }
