@@ -1293,7 +1293,13 @@ start --> (7) -b-> ((8))
           </div>
         </NotePage>
 
-        <NotePage pageNumber="67" label="Lab Syllabus">
+        <NotePage pageNumber="67" label="Lab">
+          <div className="cover-page">
+            <h2>Compiler Design Lab</h2>
+          </div>
+        </NotePage>
+
+        <NotePage pageNumber="68" label="Lab Syllabus">
           <NoteTitleBox>List of Experiments</NoteTitleBox>
           <div className="arrow-list">
             <ArrowItem>1. Implementation of symbol table.</ArrowItem>
@@ -1326,7 +1332,7 @@ start --> (7) -b-> ((8))
           </div>
         </NotePage>
 
-        <NotePage pageNumber="68" label="Symbol Table Program">
+        <NotePage pageNumber="69" label="Symbol Table Program">
           <NoteTitleBox>Experiment 1: Implementation of Symbol Table</NoteTitleBox>
           <p className="note-copy">
             A C program that reads an expression terminated by <code>$</code>, scans it for identifiers (alphabetic

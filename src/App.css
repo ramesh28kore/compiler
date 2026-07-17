@@ -68,6 +68,9 @@
 .data-table td:first-child { font-family: var(--mono); }
 .ascii-diagram { margin: 26px 0; padding: 16px 20px; overflow-x: auto; background: rgba(255, 255, 255, 0.4); border: 2px solid var(--ink); border-radius: 4px 8px 3px 6px; color: var(--ink); font-family: var(--mono); font-size: 15px; line-height: 1.5; white-space: pre; transform: rotate(-0.2deg); }
 
+.cover-page { display: flex; align-items: center; justify-content: center; min-height: 60vh; text-align: center; }
+.cover-page h2 { margin: 0; color: var(--ink); font-size: clamp(38px, 6vw, 64px); line-height: 1.1; font-weight: 700; letter-spacing: 0.01em; }
+
 @media print {
 	.notes-app { padding: 0; background: #fff; }
 	.app-header { padding-bottom: 24px; }
